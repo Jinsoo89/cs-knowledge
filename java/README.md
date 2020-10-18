@@ -26,7 +26,8 @@
 3. Heap 영역의 메모리 관리를 한다 (Garbage Collector)  
 
 #### 자바 프로그램의 실행 프로세스:
-![](https://pediaa.com/wp-content/uploads/2018/11/Difference-Between-Interpreter-and-JIT-Compiler_Figure-2.jpg)
+<img src="https://pediaa.com/wp-content/uploads/2018/11/Difference-Between-Interpreter-and-JIT-Compiler_Figure-2.jpg" />
+    
 1. 소스 파일들을 Java Compiler가 bytecode(.class)로 컴파일 한다. 
 2. JVM에서 Class Loader를 사용해 필요한 클래스 파일을 runtime에 동적으로 load한다
 3. 실행 엔진(Execution Engine)이 필요한 bytecode를 실행 가능하도록 추가 작업을 진행 한다.
@@ -37,7 +38,7 @@
     - 운영체제에 따른 JVM 설치 및 실행으로 동일한 코드를 각 운영체제의 native machine code로 실행하게 된다. 이를 통해 운영체제에 대한 제약이 없고, Write Once Run Everywhere (WORE)가 보장된다.
      
 #### JVM 아키텍쳐:
-![](https://www.guru99.com/images/1/2.png)
+<img src="https://www.guru99.com/images/1/2.png" width="600"/>
 
 1. Class Loader:
     - 클래스 파일을 읽는 기능을 한다.
@@ -62,17 +63,20 @@
 #### Garbage Collection:
 Garbage Collector를 통해 Heap Memory 영역 내 객체들 중 사용되는 객체, 사용되지 않는 객체를 분류하고 사용되지 않는 객체들을 지워 메모리 공간을 확보하는 작업이다.
 
-![](https://miro.medium.com/max/700/0*zQNh1EUPEuDBQ7NZ.png)
-1. Marking Process:
+<img src="https://miro.medium.com/max/700/0*zQNh1EUPEuDBQ7NZ.png" width="500" height="300" />
+
+- Marking Process:
     - 이 과정에서 Garbage Collector는 모든 객체들을 스캔해 사용되고 있는지 더이상 사용되지 않는지 구분한다.
-    
-![](https://miro.medium.com/max/700/0*n8c2TYVvPIWoflDi.png)
-2. Deletion without Compacting:
+
+<img src="https://miro.medium.com/max/700/0*n8c2TYVvPIWoflDi.png" width="500" height="300" />
+
+- Deletion without Compacting:
     - 사용되지 않는 객체들을 삭제해 메모리 공간을 확보한다.
     - Memory Allocator가 사용 가능해진 메모리 공간을 참조해 새로운 객체에 할당한다.
 
-![](https://miro.medium.com/max/700/0*dv5yt9m6hJcJIt8Z.png)
-3. Deletion with Compacting:
+<img src="https://miro.medium.com/max/700/0*dv5yt9m6hJcJIt8Z.png" width="500" height="300" />
+
+- Deletion with Compacting:
     - 사용되지 않는 객체들을 삭제하고 남은 객체들을 이동시켜 객체간 메모리 사이 빈 공간들을 채운다.
     - Memory Allocator가 확보한 공간의 시작점을 참조하기 때문에 새로운 객체에 할당하는 작업이 빠르다.
 
@@ -95,17 +99,27 @@ Garbage Collector를 통해 Heap Memory 영역 내 객체들 중 사용되는 �
     - 어떤 실체를 뜻하지 않고, 관계를 말할때 사용된다.
 
 #### 객체 지향의 특징:
+
 1. 추상화:
     - 오직 필요한 속성만 보여주고 불필요한 정보들은 숨기는것.
     - 객체와 관련된 디테일만 보여줌으로써 프로그램 복잡도를 줄일수 있다.
 2. 캡슐화:
-
+    - 클래스의 데이터와 메소드를 하나의 단위로 묶는 메커니즘.
+    - 다른 클래스로 부터의 데이터 접근을 막는다. 
+    - 구현 디테일을 외부로 노출시키지 않는다.
 3. 상속:
-
+    - 클래스가 다른 클래스의 구성 요소(fields and methods)들을 상속 받을수 있다는 메커니즘.
+    - Superclass(parent, 부모)클래스는 상속하는 클래스
+    - Subclass(child, 자식)클래스는 상속받는 클래스
 4. 다형성:
-
+    - 다양한 형태를 가진다는 의미.
+    - 하나의 액션을 다른 방법들로 구현 하는것.
+    - Overriding과 Overloading이 대표적임.
+        - Overriding, 클래스 상속과 부모 클래스 메소드 재정의 및 인터페이스에 정의된 메소드 구현.
+        - Overloading, 동일한 이름의 메소드가 파라미터(타입이나 개수)에 따라 다르게 동작하도록 구현.
 
 #### References:
-1. https://www.viralpatel.net/java-virtual-machine-an-inside-story/
+1. https://www.viralpatel.net/java-virtual-machine-an-inside-story
 2. https://www.guru99.com/java-virtual-machine-jvm.html
 3. https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
+4. https://www.javatpoint.com
